@@ -3,6 +3,7 @@ import mountAPI from './api';
 import mountAuth from './auth';
 import respond from 'src/middlewares/respond';
 import mountTESTINGGIT from "./testingGit";
+import mountTESTINGAPI from "./testingApi";
 
 export default function addRoutes(router: Router) {
     const api = express.Router();
@@ -22,5 +23,10 @@ export default function addRoutes(router: Router) {
                 const testingGit = Router();
                 mountTESTINGGIT(testingGit);
                 router.use('/testingGit', testingGit);
+
+                const testingApi = Router();
+                mountTESTINGAPI(testingApi);
+                router.use('/testingApi', testingApi);
+            
             
 }
