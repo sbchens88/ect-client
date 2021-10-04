@@ -6,6 +6,7 @@ import mountTESTINGGIT from './testingGit';
 import mountTESTINGAPI from './testingApi';
 import mountCHENTESTING from './chenTesting';
 import mountTESTINGTHE from './testingThe';
+import mountAPITEST from './apiTest';
 
 export default function addRoutes(router: Router) {
     const api = express.Router();
@@ -37,4 +38,8 @@ export default function addRoutes(router: Router) {
     const testingThe = Router();
     mountTESTINGTHE(testingThe);
     router.use('/testingThe', testingThe);
+
+    const apiTest = Router();
+    mountAPITEST(apiTest);
+    router.use('/apiTest', apiTest);
 }
