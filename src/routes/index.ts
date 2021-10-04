@@ -5,6 +5,7 @@ import respond from 'src/middlewares/respond';
 import mountTESTINGGIT from './testingGit';
 import mountTESTINGAPI from './testingApi';
 import mountCHENTESTING from './chenTesting';
+import mountTESTINGTHE from './testingThe';
 
 export default function addRoutes(router: Router) {
     const api = express.Router();
@@ -32,4 +33,8 @@ export default function addRoutes(router: Router) {
     const chenTesting = Router();
     mountCHENTESTING(chenTesting);
     router.use('/chenTesting', chenTesting);
+
+    const testingThe = Router();
+    mountTESTINGTHE(testingThe);
+    router.use('/testingThe', testingThe);
 }
